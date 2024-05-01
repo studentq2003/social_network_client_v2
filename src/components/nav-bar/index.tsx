@@ -73,6 +73,7 @@ export default function NavBarUpdated() {
                             isBordered
                             as="button"
                             className="transition-transform"
+                            // @ts-ignore
                             color={color}
                             name={name}
                             size="sm"

@@ -42,7 +42,7 @@ export const CreatePost = () => {
 
     let color
 
-    if (theme == 'dark') {
+    if (theme === 'dark') {
         color = "secondary"
     } else {
         color = "default"
@@ -96,6 +96,7 @@ export const CreatePost = () => {
                     </Badge>
                 )}
                 <Button
+                    // @ts-ignore
                     color={color}
                     className="flex-end p-2 mx-4"
                     endContent={<IoMdCreate/>}

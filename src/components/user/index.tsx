@@ -50,6 +50,7 @@ export const User: React.FC<Props> = ({
                     ) : (
                         <Avatar
                             isBordered
+                            // @ts-ignore
                             color={color}
                             showFallback src={`${BASE_URL}${avatarUrl}`} fallback={
                             <MdPhotoCamera className="animate-pulse w-6 h-6 text-default-500" fill="currentColor"

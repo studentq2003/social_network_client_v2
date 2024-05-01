@@ -2,7 +2,7 @@ import {
     Card as NextUiCard,
     CardHeader,
     CardBody,
-    CardFooter, Chip,
+    CardFooter,
 } from "@nextui-org/react"
 import {MetaInfo} from "../meta-info"
 import {Typography} from "../typography"
@@ -31,7 +31,6 @@ import {useContext, useState} from "react"
 import {hasErrorField} from "../../utils/has-error-field"
 import {ClickSound} from "../click-sound";
 import {ThemeContext} from "../theme-provider";
-import PostControl from "../post-control";
 
 type Props = {
     avatarUrl: string

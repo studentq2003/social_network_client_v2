@@ -1,0 +1,4 @@
+.centerVertically {
+    display: flex;
+    align-items: center;
+}

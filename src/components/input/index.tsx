@@ -1,15 +1,16 @@
 import React from "react"
-import { Control, useController } from "react-hook-form"
-import { Input as NextInput } from "@nextui-org/react"
+import {Control, useController} from "react-hook-form"
+import {Input as NextInput} from "@nextui-org/react"
 
 type Props = {
-    name: string
-    label: string
-    placeholder?: string
-    type?: string
-    control: Control<any>
-    required?: string
-    endContent?: JSX.Element
+    name: string,
+    label: string,
+    placeholder?: string,
+    type?: string,
+    control: Control<any>,
+    required?: string,
+    endContent?: JSX.Element,
+    maxLength?: number
 }
 
 export const Input: React.FC<Props> = ({
@@ -20,15 +21,16 @@ export const Input: React.FC<Props> = ({
                                            control,
                                            required = "",
                                            endContent,
+                                           maxLength
                                        }) => {
     const {
         field,
-        fieldState: { invalid },
-        formState: { errors },
+        fieldState: {invalid},
+        formState: {errors},
     } = useController({
         name,
         control,
-        rules: { required },
+        rules: {required},
     })
 
     return (
