@@ -5,7 +5,6 @@ import {
     CardFooter,
 } from "@nextui-org/react"
 import {MetaInfo} from "../meta-info"
-import {Typography} from "../typography"
 import {User} from "../user"
 import {Link, useNavigate} from "react-router-dom"
 import {FaRegComment} from "react-icons/fa6"
@@ -31,6 +30,7 @@ import {useContext, useState} from "react"
 import {hasErrorField} from "../../utils/has-error-field"
 import {ClickSound} from "../click-sound";
 import {ThemeContext} from "../theme-provider";
+import "./index.css"
 
 type Props = {
     avatarUrl: string
@@ -145,7 +145,7 @@ export const Card = ({
     }
 
     return (
-        <NextUiCard className="mb-5">
+        <NextUiCard className="post-card">
             <CardHeader className="justify-between items-center bg-transparent">
                 <Link to={`/users/${authorId}`} onClick={() => {
                     play()
@@ -170,7 +170,7 @@ export const Card = ({
 
             </CardHeader>
             <CardBody className="px-3 py-2 mb-5">
-                <Typography>{content}</Typography>
+                <p className='post-text'>{content}</p>
             </CardBody>
             {cardFor !== "comment" && (
                 <CardFooter className="gap-3">

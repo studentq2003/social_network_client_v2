@@ -52,7 +52,7 @@ export default function NavBarUpdated() {
     const cur_path = useLocation().pathname
 
     return (
-        <Navbar>
+        <Navbar className='max-w-[90%]'>
             <NavbarBrand as={Link} to="/" onClick={() => {
                 play()
             }}>

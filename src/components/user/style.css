@@ -1,0 +1,15 @@
+.user-container {
+    display: flex;
+    font-size: small;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0;
+}
+
+.user-avatar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}

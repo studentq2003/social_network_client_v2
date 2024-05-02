@@ -5,6 +5,7 @@ import { VscAccount } from "react-icons/vsc";
 import {BASE_URL} from "../../constants"
 import {Link} from "react-router-dom"
 import {ClickSound} from "../click-sound";
+import "./style.css"
 
 export const Profile = () => {
     const current = useSelector(selectCurrent)
@@ -18,11 +19,11 @@ export const Profile = () => {
     const {name, email, avatarUrl, id} = current
 
     return (
-        <Card className="py-4 w-[302px]">
+        <Card className="profile-card">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <Image
                     alt="Card background"
-                    className="object-cover rounded-xl"
+                    className="avatar object-cover rounded-xl"
                     src={`${BASE_URL}${avatarUrl}`}
                     width={370}
                 />

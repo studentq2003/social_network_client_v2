@@ -1,5 +1,4 @@
 import {useEffect} from "react"
-import {Container} from "../container"
 import {Outlet, useNavigate} from "react-router-dom"
 import {Profile} from "../profile"
 import {useSelector} from "react-redux"
@@ -8,6 +7,7 @@ import {
     selectIsAuthenticated,
 } from "../../features/user/userSlice"
 import NavBarUpdated from "../nav-bar";
+import "./style.css"
 
 export const Layout = () => {
     const isAuthenticated = useSelector(selectIsAuthenticated)
@@ -23,14 +23,14 @@ export const Layout = () => {
     return (
         <>
             <NavBarUpdated/>
-            <Container>
-                <div className="flex-1 p-4">
-                    <Outlet/>
+                <div className='container'>
+                    <div className="outlet">
+                        <Outlet/>
+                    </div>
+                    {/*<div className="layout-profile-container">*/}
+                    {/*    <div className="layout-profile flex-col flex gap-5">{!user && <Profile/>}</div>*/}
+                    {/*</div>*/}
                 </div>
-                <div className="flex-2 p-4">
-                    <div className="flex-col flex gap-5">{!user && <Profile/>}</div>
-                </div>
-            </Container>
         </>
     )
 }

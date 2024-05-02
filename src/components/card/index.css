@@ -1,0 +1,33 @@
+.post-card {
+    margin: 10px;
+    margin-top: 20px;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px royalblue;
+}
+
+.post-text {
+    font-size: larger;
+}
+
+@media (max-width: 1200px) {
+    .post-text {
+        font-size: large;
+    }
+}
+
+@media (max-width: 992px) {
+    .post-text {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-text {
+        font-size: medium;
+        margin: 0;
+        padding: 0;
+    }
+}
+

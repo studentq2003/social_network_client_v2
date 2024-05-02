@@ -47,7 +47,7 @@ export const CreateComment = () => {
                         variant={'bordered'}
                         labelPlacement="outside"
                         placeholder="Напишите свой ответ"
-                        className="col-span-12 md:col-span-6 mb-6 md:mb-5 bg-amber-400"
+                        className="col-span-12 md:col-span-6 mb-6 md:mb-5"
                         maxLength={3000}
                     />
                 )}

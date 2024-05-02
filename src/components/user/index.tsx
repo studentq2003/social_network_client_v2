@@ -3,11 +3,9 @@ import {Avatar, Badge} from "@nextui-org/react"
 import {BASE_URL} from "../../constants"
 import {ThemeContext} from "../theme-provider";
 import {MdPhotoCamera} from "react-icons/md";
-import {VscVerifiedFilled} from "react-icons/vsc";
 import {useSelector} from "react-redux";
 import {selectCurrent} from "../../features/user/userSlice";
-import {FiCheck} from "react-icons/fi";
-
+import "./style.css"
 
 type Props = {
     authorId: string,
@@ -41,8 +39,8 @@ export const User: React.FC<Props> = ({
 
     return (
         <>
-            <div className={'flex text-small font-semibold leading-none text-default-600'}>
-                <div className="flex gap-4 items-center mr-5">
+            <div className={'user-container'}>
+                <div className="user-avatar">
                     {authorId === id ? (
                         <Badge content="" color="success" shape="circle" placement="bottom-right">
                             <Avatar isBordered radius="lg" src={`${BASE_URL}${avatarUrl}`}/>

@@ -1,0 +1,33 @@
+.post-create-form {
+    flex-grow: 1;
+    justify-content: center;
+    border: 1px solid royalblue;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 10px;
+    box-shadow: 1px 3px 3px dodgerblue;
+}
+
+.post-create-form-textarea {
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px cadetblue;
+}
+
+.user-info-create-post {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.create-post-avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.create-post-btn {
+    height: 44px;
+}

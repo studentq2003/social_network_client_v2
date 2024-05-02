@@ -1,43 +1,54 @@
 import {Card} from "../../components/card"
 import {CreatePost} from "../../components/create-post"
 import {useGetAllPostsQuery} from "../../app/services/postsApi"
+import "./style.css"
+import {Profile} from "../../components/profile";
 
 export const Posts = () => {
     const {data} = useGetAllPostsQuery()
 
     return (
         <>
-            <div className="mb-10 w-full flex">
-                <CreatePost/>
+            <div className='container'>
+                <div className="post">
+                    <div className="create">
+                        <CreatePost/>
+                    </div>
+                    {data && data.length > 0
+                        ? data.map(
+                            ({
+                                 content,
+                                 author,
+                                 id,
+                                 authorId,
+                                 comments,
+                                 likes,
+                                 likedByUser,
+                                 createdAt,
+                             }) => (
+                                <Card
+                                    key={id}
+                                    avatarUrl={author.avatarUrl ?? ""}
+                                    content={content}
+                                    name={author.name ?? ""}
+                                    likesCount={likes.length}
+                                    commentsCount={comments.length}
+                                    authorId={authorId}
+                                    id={id}
+                                    likedByUser={likedByUser}
+                                    createdAt={createdAt}
+                                    cardFor="post"
+                                />
+                            ),
+                        )
+                        : null}
+                </div>
+                <div>
+                    <div className="layout-profile-container">
+                        <div className="layout-profile">{<Profile/>}</div>
+                    </div>
+                </div>
             </div>
-            {data && data.length > 0
-                ? data.map(
-                    ({
-                         content,
-                         author,
-                         id,
-                         authorId,
-                         comments,
-                         likes,
-                         likedByUser,
-                         createdAt,
-                     }) => (
-                        <Card
-                            key={id}
-                            avatarUrl={author.avatarUrl ?? ""}
-                            content={content}
-                            name={author.name ?? ""}
-                            likesCount={likes.length}
-                            commentsCount={comments.length}
-                            authorId={authorId}
-                            id={id}
-                            likedByUser={likedByUser}
-                            createdAt={createdAt}
-                            cardFor="post"
-                        />
-                    ),
-                )
-                : null}
         </>
     )
 }

@@ -23,6 +23,7 @@ import {ProfileInfo} from "../../components/profile-info"
 import {CountInfo} from "../../components/count-info"
 import {ClickSound} from "../../components/click-sound";
 
+
 export const UserProfile = () => {
     const {id} = useParams<{ id: string }>()
     const {isOpen, onOpen, onClose} = useDisclosure()

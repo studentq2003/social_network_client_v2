@@ -13,6 +13,7 @@ import {BASE_URL} from "../../constants";
 import {useSelector} from "react-redux";
 import {selectCurrent} from "../../features/user/userSlice";
 import { FiCheck } from "react-icons/fi";
+import "./style.css"
 
 
 export const CreatePost = () => {
@@ -55,7 +56,7 @@ export const CreatePost = () => {
     const {name, email, avatarUrl, id} = current
 
     return (
-        <form className="flex-grow mb-5" onSubmit={onSubmit}>
+        <form className="post-create-form flex-grow mb-5" onSubmit={onSubmit}>
             <Controller
                 name="post"
                 control={control}
@@ -69,14 +70,14 @@ export const CreatePost = () => {
                         variant={'bordered'}
                         labelPlacement="outside"
                         placeholder="О чём вы думаете?"
-                        className="col-span-12 md:col-span-6 mb-6 md:mb-5"
+                        className="post-create-form-textarea"
                         maxLength={3000}
                     />
 
                 )}
             />
             {errors && <ErrorMessage error={error}/>}
-            <div className='flex flex-wrap justify-start'>
+            <div className='user-info-create-post '>
                 {email == 'studentq@animalq.ru' ? (
                     <Badge
                         isOneChar
@@ -86,6 +87,7 @@ export const CreatePost = () => {
                     >
                         <Avatar
                             isBordered
+                            className='create-post-avatar'
                             color="success"
                             radius="md"
                             src={`${BASE_URL}${avatarUrl}`}                        />
@@ -98,7 +100,7 @@ export const CreatePost = () => {
                 <Button
                     // @ts-ignore
                     color={color}
-                    className="flex-end p-2 mx-4"
+                    className="create-post-btn flex-end p-2 mx-4"
                     endContent={<IoMdCreate/>}
                     type="submit"
                     onClick={() => {
